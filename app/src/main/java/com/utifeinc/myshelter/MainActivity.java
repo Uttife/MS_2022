@@ -1,18 +1,23 @@
 package com.utifeinc.myshelter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import static java.sql.DriverManager.println;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //simulating app initialization by making thread pause for 5 seconds
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //I dey set the theme back to the regular theme after splashScreen
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
 
-        println("test1");
     }
 }
